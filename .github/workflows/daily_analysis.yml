@@ -39,9 +39,7 @@ jobs:
     
     steps:
       - name: 设置时区为北京时间
-        uses: szenius/set-timezone@v2
-        with:
-          timezoneLinux: "Asia/Shanghai."
+        run: sudo timedatectl set-timezone Asia/Shanghai
     
       - name: 随机延迟（避免固定时间访问）
         run: sleep $((RANDOM % 60))  # 随机延迟0-60秒启动
